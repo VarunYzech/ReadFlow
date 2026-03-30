@@ -1,0 +1,474 @@
+/* ============================================
+   LANDING PAGE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Georgia', 'Garamond', serif;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a2f4a 25%, #16213e 50%, #1a2f4a 75%, #0d1b2a 100%);
+    background-attachment: fixed;
+    color: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 150, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.landing-container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.landing-header {
+    background: linear-gradient(180deg, rgba(10, 14, 39, 0.98) 0%, rgba(22, 33, 62, 0.95) 100%);
+    border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+    padding: clamp(20px, 5vw, 40px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo {
+    font-size: clamp(28px, 7vw, 48px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #a0a0a0;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.landing-main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: clamp(20px, 5vw, 60px);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    text-align: center;
+    margin-bottom: clamp(40px, 8vw, 80px);
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-content h2 {
+    font-size: clamp(28px, 6vw, 48px);
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: #b0b8c8;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.subtitle {
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+/* ============================================
+   OPTIONS CONTAINER
+   ============================================ */
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(20px, 4vw, 40px);
+    margin-bottom: clamp(40px, 8vw, 80px);
+}
+
+.option-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 16px;
+    padding: clamp(20px, 4vw, 40px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+}
+
+.option-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.1);
+}
+
+.option-icon {
+    font-size: clamp(40px, 8vw, 60px);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.option-card h3 {
+    font-size: clamp(18px, 3vw, 24px);
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.option-card p {
+    font-size: clamp(14px, 2vw, 16px);
+    color: #a0a0a0;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   UPLOAD AREA
+   ============================================ */
+.upload-area {
+    border: 2px dashed rgba(0, 212, 255, 0.4);
+    border-radius: 12px;
+    padding: clamp(20px, 4vw, 40px);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(0, 212, 255, 0.02);
+    margin-bottom: 15px;
+}
+
+.upload-area:hover {
+    border-color: rgba(0, 212, 255, 0.7);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.upload-area.dragover {
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-content {
+    pointer-events: none;
+}
+
+.upload-content p {
+    font-size: clamp(14px, 2vw, 16px);
+    color: #00d4ff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.upload-content small {
+    font-size: clamp(12px, 1.8vw, 14px);
+    color: #7a8aa0;
+}
+
+.upload-status {
+    font-size: clamp(12px, 2vw, 14px);
+    min-height: 20px;
+    margin-top: 10px;
+}
+
+.upload-status.success {
+    color: #4ade80;
+}
+
+.upload-status.error {
+    color: #ff6464;
+}
+
+.upload-status.info {
+    color: #00d4ff;
+}
+
+/* ============================================
+   START SECTION
+   ============================================ */
+.start-section {
+    background: rgba(0, 212, 255, 0.08);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 16px;
+    padding: clamp(30px, 6vw, 60px);
+    text-align: center;
+    margin-bottom: clamp(40px, 8vw, 80px);
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.start-content h3 {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.start-content p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 40px);
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%);
+    color: #00d4ff;
+    font-size: clamp(14px, 2.5vw, 16px);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn:hover:not(.btn-disabled) {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.25) 0%, rgba(0, 150, 255, 0.15) 100%);
+    border-color: rgba(0, 212, 255, 0.7);
+    box-shadow: 0 6px 25px rgba(0, 212, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn:active:not(.btn-disabled) {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-large {
+    padding: clamp(14px, 3vw, 18px) clamp(32px, 6vw, 60px);
+    font-size: clamp(16px, 3vw, 20px);
+    min-width: 200px;
+}
+
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%);
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: none;
+    transform: none;
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+.features {
+    margin-bottom: clamp(40px, 8vw, 80px);
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.features h3 {
+    font-size: clamp(24px, 5vw, 36px);
+    text-align: center;
+    margin-bottom: clamp(30px, 6vw, 60px);
+    color: #ffffff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(20px, 4vw, 40px);
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 12px;
+    padding: clamp(20px, 4vw, 30px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    font-size: clamp(32px, 6vw, 48px);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.feature-item h4 {
+    font-size: clamp(16px, 2.5vw, 18px);
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.feature-item p {
+    font-size: clamp(13px, 2vw, 15px);
+    color: #a0a0a0;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.landing-footer {
+    background: linear-gradient(180deg, rgba(22, 33, 62, 0.95) 0%, rgba(10, 14, 39, 0.98) 100%);
+    border-top: 2px solid rgba(0, 212, 255, 0.2);
+    padding: clamp(20px, 4vw, 40px);
+    text-align: center;
+    color: #7a8aa0;
+    font-size: clamp(12px, 2vw, 14px);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .landing-main {
+        padding: clamp(15px, 3vw, 30px);
+    }
+
+    .options-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .hero-content h2 {
+        margin-bottom: 15px;
+    }
+
+    .start-section {
+        padding: clamp(20px, 4vw, 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-header {
+        padding: clamp(15px, 3vw, 20px);
+    }
+
+    .logo {
+        margin-bottom: 8px;
+    }
+
+    .tagline {
+        font-size: clamp(12px, 2vw, 14px);
+    }
+
+    .landing-main {
+        padding: clamp(12px, 2vw, 20px);
+    }
+
+    .hero {
+        margin-bottom: clamp(30px, 5vw, 50px);
+    }
+
+    .options-container {
+        gap: clamp(15px, 3vw, 25px);
+    }
+
+    .option-card {
+        padding: clamp(15px, 3vw, 25px);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-large {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.btn:focus,
+.upload-area:focus {
+    outline: 2px solid #00d4ff;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

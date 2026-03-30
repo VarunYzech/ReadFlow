@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadFlow - Smart Reading Assistant</title>
+    <link rel="stylesheet" href="../css/landing.css">
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Header -->
+        <header class="landing-header">
+            <div class="header-content">
+                <h1 class="logo">ReadFlow</h1>
+                <p class="tagline">Smart Reading Assistant</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="landing-main">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Welcome to ReadFlow</h2>
+                    <p>Experience immersive reading with smooth scrolling, adjustable speed, and background music.</p>
+                    <p class="subtitle">Upload your own stories and music, or choose from our samples.</p>
+                </div>
+            </section>
+
+            <!-- Options Container -->
+            <section class="options-container">
+                <!-- Option 1: Sample Stories -->
+                <div class="option-card">
+                    <div class="option-icon">📖</div>
+                    <h3>Sample Stories</h3>
+                    <p>Start with our curated collection of inspiring stories.</p>
+                    <a href="index.html" class="btn btn-primary">Read Now</a>
+                </div>
+
+                <!-- Option 2: Upload Story -->
+                <div class="option-card">
+                    <div class="option-icon">📤</div>
+                    <h3>Upload Your Story</h3>
+                    <p>Upload a text file (.txt) to read your own content.</p>
+                    <div class="upload-area" id="storyUploadArea">
+                        <input type="file" id="storyFileInput" accept=".txt" hidden>
+                        <div class="upload-content">
+                            <p>Click or drag .txt file here</p>
+                            <small>Max 1MB</small>
+                        </div>
+                    </div>
+                    <div id="storyUploadStatus" class="upload-status"></div>
+                </div>
+
+                <!-- Option 3: Upload Music -->
+                <div class="option-card">
+                    <div class="option-icon">🎵</div>
+                    <h3>Upload Your Music</h3>
+                    <p>Add background music (.mp3) for your reading session.</p>
+                    <div class="upload-area" id="musicUploadArea">
+                        <input type="file" id="musicFileInput" accept=".mp3" hidden>
+                        <div class="upload-content">
+                            <p>Click or drag .mp3 file here</p>
+                            <small>Max 10MB</small>
+                        </div>
+                    </div>
+                    <div id="musicUploadStatus" class="upload-status"></div>
+                </div>
+            </section>
+
+            <!-- Start Reading Section -->
+            <section class="start-section">
+                <div class="start-content">
+                    <h3>Ready to Read?</h3>
+                    <p id="readyMessage">Upload a story to get started</p>
+                    <button id="startReadingBtn" class="btn btn-large btn-disabled" disabled>
+                        Start Reading
+                    </button>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <h3>Why ReadFlow?</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <h4>Smooth Scrolling</h4>
+                        <p>60fps smooth reading experience</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎚️</span>
+                        <h4>Speed Control</h4>
+                        <p>Adjust reading speed 0.5x to 2x</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <h4>Dark & Light</h4>
+                        <p>Two beautiful themes</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎵</span>
+                        <h4>Background Music</h4>
+                        <p>Built-in piano or your own</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <h4>Responsive</h4>
+                        <p>Works on all devices</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⌨️</span>
+                        <h4>Keyboard Shortcuts</h4>
+                        <p>Spacebar to play/pause</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <p>&copy; 2026 ReadFlow. Where reading meets flow state. 📖✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/landing.js"></script>
+</body>
+</html>

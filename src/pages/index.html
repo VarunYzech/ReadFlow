@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadFlow - Smart Reading Assistant</title>
+    <link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="landing.html" class="logo-link">
+                    <h1 class="logo">ReadFlow</h1>
+                </a>
+                <div class="story-selector">
+                    <select id="storySelect" class="story-dropdown">
+                        <option value="">Select a story...</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Reader Container -->
+        <div class="reader-container">
+            <div class="focus-beam"></div>
+            <div class="reader" id="reader">
+                <div class="reader-content" id="readerContent">
+                    <p class="placeholder">Select a story to begin reading</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Controls -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Play Controls -->
+                <div class="control-group">
+                    <button id="playBtn" class="btn btn-play" title="Play/Pause">
+                        <span class="icon">▶</span>
+                    </button>
+                </div>
+
+                <!-- Speed Control -->
+                <div class="control-group">
+                    <button id="speedMinusBtn" class="btn btn-small" title="Decrease speed">−</button>
+                    <input type="range" id="speedSlider" class="slider" min="0.5" max="2" step="0.1" value="1" title="Reading speed">
+                    <button id="speedPlusBtn" class="btn btn-small" title="Increase speed">+</button>
+                    <span id="speedDisplay" class="speed-display">1.0x</span>
+                </div>
+
+                <!-- Music Control -->
+                <div class="control-group">
+                    <button id="musicToggleBtn" class="btn btn-music" title="Toggle music">
+                        <span class="icon">🎵</span>
+                    </button>
+                    <input type="range" id="volumeSlider" class="slider slider-volume" min="0" max="100" value="30" title="Volume">
+                    <span id="volumeDisplay" class="volume-display">30%</span>
+                </div>
+
+                <!-- Theme Toggle -->
+                <div class="control-group">
+                    <button id="themeToggleBtn" class="btn btn-theme" title="Toggle theme">
+                        <span class="icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" preload="none">
+        <source src="../../public/assets/music/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="../js/reader.js"></script>
+</body>
+</html>

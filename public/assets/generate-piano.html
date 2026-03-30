@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Piano Music</title>
+</head>
+<body>
+    <h1>Generating Piano Music...</h1>
+    <p>This will create a piano music file. Open browser console to see progress.</p>
+    
+    <script>
+        // Simple piano music generator using Web Audio API
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Piano notes (frequencies in Hz)
+        const notes = {
+            C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.00,D4: 293.66, E4: 329.63,   C4: 261.63,
+            A4: 440.00, B4: 493.88, C5: 523.25, D5: 587.33, E5: 659.25,D4: 293.66,   C4: 261.63, E4: 329.63
+        };
+        
+        function playNote(frequency, duration, time) {
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            osc.frequency.value = frequency;
+            osc.type = 'sine';
+            
+            gain.gain.setValueAtTime(0.3, time);
+            gain.gain.exponentialRampToValueAtTime(0.01, time + duration);
+            
+            osc.start(time);
+            osc.stop(time + duration);
+        }
+        
+        // Simple melody
+        const melody = [
+            { note: 'C4', duration: 0.5 },
+            { note: 'E4', duration: 0.5 },
+            { note: 'G4', duration: 0.5 },
+            { note: 'A4', duration: 0.5 },
+            { note: 'G4', duration: 0.5 },
+            { note: 'E4', duration: 0.5 },
+            { note: 'C4', duration: 0.5 },
+            { note: 'E4', duration: 0.5 },
+            { note: 'C4', duration: 1 }
+        ];
+        
+        let currentTime = audioContext.currentTime;
+        melody.forEach(({ note, duration }) => {
+            playNote(notes[note], duration, currentTime);
+            currentTime += duration;
+        });
+        
+        console.log('Piano music generated!');
+    </script>
+</body>
+</html>
