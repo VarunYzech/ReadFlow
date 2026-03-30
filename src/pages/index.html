@@ -11,14 +11,19 @@
         <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <a href="landing.html" class="logo-link">
-                    <h1 class="logo">ReadFlow</h1>
-                </a>
-                <div class="story-selector">
-                    <select id="storySelect" class="story-dropdown">
-                        <option value="">Select a story...</option>
-                    </select>
+                <div class="header-left">
+                    <a href="landing.html" class="logo-link">
+                        <h1 class="logo">ReadFlow</h1>
+                    </a>
+                    <div class="story-selector">
+                        <select id="storySelect" class="story-dropdown">
+                            <option value="">Select a story...</option>
+                        </select>
+                    </div>
                 </div>
+                <button id="themeToggleBtn" class="btn btn-theme-header" title="Toggle theme">
+                    <span class="icon">🌙</span>
+                </button>
             </div>
         </header>
 
@@ -57,13 +62,6 @@
                     </button>
                     <input type="range" id="volumeSlider" class="slider slider-volume" min="0" max="100" value="30" title="Volume">
                     <span id="volumeDisplay" class="volume-display">30%</span>
-                </div>
-
-                <!-- Theme Toggle -->
-                <div class="control-group">
-                    <button id="themeToggleBtn" class="btn btn-theme" title="Toggle theme">
-                        <span class="icon">🌙</span>
-                    </button>
                 </div>
             </div>
         </footer>
