@@ -155,16 +155,16 @@ body.light-theme .story-dropdown option {
    ============================================ */
 .header {
     flex-shrink: 0;
-    height: clamp(70px, 12vh, 120px);
-    background: linear-gradient(180deg, rgba(var(--bg-primary-rgb), 0.98) 0%, rgba(var(--bg-secondary-rgb), 0.95) 100%);
-    border-bottom: 2px solid var(--border);
+    height: auto;
+    min-height: clamp(60px, 12vh, 100px);
+    background: linear-gradient(180deg, rgba(10, 14, 39, 0.98) 0%, rgba(22, 33, 62, 0.95) 100%);
+    border-bottom: 2px solid rgba(0, 212, 255, 0.2);
     display: flex;
     align-items: center;
-    padding: 0 clamp(20px, 5vw, 40px);
+    padding: clamp(12px, 2vh, 20px) clamp(16px, 4vw, 32px);
     backdrop-filter: blur(15px);
     z-index: 100;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
 }
 
 .header-content {
@@ -293,7 +293,6 @@ body.light-theme .story-dropdown option {
     align-items: center;
     justify-content: center;
     min-height: 0;
-    padding-bottom: clamp(55px, 8vh, 75px);
 }
 
 .reader {
@@ -427,28 +426,26 @@ body.light-theme .story-dropdown option {
 .footer {
     flex-shrink: 0;
     height: auto;
-    min-height: clamp(60px, 10vh, 90px);
-    background: linear-gradient(180deg, rgba(var(--bg-secondary-rgb), 0.95) 0%, rgba(var(--bg-primary-rgb), 0.98) 100%);
-    border-top: 2px solid var(--border);
+    min-height: clamp(65px, 11vh, 100px);
+    background: linear-gradient(180deg, rgba(22, 33, 62, 0.95) 0%, rgba(10, 14, 39, 0.98) 100%);
+    border-top: 2px solid rgba(0, 212, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(10px, 2vh, 16px) clamp(10px, 3vw, 20px);
+    padding: clamp(12px, 2vh, 18px) clamp(16px, 4vw, 32px);
     backdrop-filter: blur(15px);
     z-index: 100;
     box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
 }
 
 .footer-content {
     display: flex;
     align-items: center;
-    gap: clamp(8px, 1.5vw, 14px);
+    gap: clamp(8px, 1.5vw, 16px);
     width: 100%;
     max-width: 1200px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    overflow-x: auto;
 }
 
 .control-group {
@@ -668,15 +665,14 @@ body.light-theme .story-dropdown option {
 
     .footer {
         height: auto;
-        min-height: clamp(60px, 9vh, 80px);
-        padding: clamp(10px, 1.5vh, 14px) clamp(10px, 2vw, 16px);
+        min-height: clamp(60px, 9vh, 85px);
+        padding: clamp(10px, 1.5vh, 14px) clamp(12px, 3vw, 24px);
     }
 
     .footer-content {
-        gap: clamp(6px, 1.2vw, 10px);
-        flex-wrap: nowrap;
+        gap: clamp(8px, 1.5vw, 12px);
+        flex-wrap: wrap;
         justify-content: center;
-        overflow-x: auto;
     }
 
     .control-group {
@@ -770,27 +766,18 @@ body.light-theme .story-dropdown option {
         flex-shrink: 0;
     }
 
-    .reader-container {
-        padding-bottom: clamp(55px, 8vh, 75px);
-    }
-
     .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: relative;
         height: auto;
-        min-height: clamp(55px, 8vh, 75px);
-        padding: clamp(8px, 1.2vh, 12px) clamp(8px, 2vw, 12px);
+        min-height: clamp(60px, 9vh, 80px);
+        padding: clamp(10px, 1.5vh, 14px) clamp(8px, 2vw, 12px);
         flex-shrink: 0;
-        border-radius: 0;
     }
 
     .footer-content {
-        gap: clamp(5px, 0.8vw, 8px);
-        flex-wrap: nowrap;
+        gap: clamp(6px, 1vw, 10px);
+        flex-wrap: wrap;
         justify-content: center;
-        overflow-x: auto;
     }
 
     .control-group {
