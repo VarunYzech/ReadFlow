@@ -148,7 +148,6 @@ body.light-theme .story-dropdown option {
     width: 100%;
     position: relative;
     z-index: 2;
-    overflow: hidden;
 }
 
 /* ============================================
@@ -294,6 +293,7 @@ body.light-theme .story-dropdown option {
     align-items: center;
     justify-content: center;
     min-height: 0;
+    padding-bottom: clamp(55px, 8vh, 75px);
 }
 
 .reader {
@@ -770,11 +770,20 @@ body.light-theme .story-dropdown option {
         flex-shrink: 0;
     }
 
+    .reader-container {
+        padding-bottom: clamp(55px, 8vh, 75px);
+    }
+
     .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: auto;
         min-height: clamp(55px, 8vh, 75px);
         padding: clamp(8px, 1.2vh, 12px) clamp(8px, 2vw, 12px);
         flex-shrink: 0;
+        border-radius: 0;
     }
 
     .footer-content {
