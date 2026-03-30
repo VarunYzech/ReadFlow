@@ -10,7 +10,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 :root {
@@ -144,7 +144,7 @@ body.light-theme .story-dropdown option {
 .app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     z-index: 2;
