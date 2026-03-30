@@ -25,14 +25,14 @@ html, body {
 }
 
 body.light-theme {
-    --bg-primary: #f5f5f5;
-    --bg-secondary: #e8e8e8;
-    --bg-tertiary: #f0f0f0;
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #e8ecf1;
+    --bg-tertiary: #f0f4f8;
     --text-primary: #1a1a1a;
-    --text-secondary: #555555;
-    --accent: #0066cc;
-    --accent-dark: #0052a3;
-    --border: rgba(0, 102, 204, 0.2);
+    --text-secondary: #333333;
+    --accent: #0052cc;
+    --accent-dark: #003d99;
+    --border: rgba(0, 82, 204, 0.3);
 }
 
 body {
@@ -64,6 +64,78 @@ body.light-theme::before {
     background: 
         radial-gradient(circle at 20% 50%, rgba(0, 102, 204, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.03) 0%, transparent 50%);
+}
+
+/* Light theme specific styles */
+body.light-theme .btn {
+    background: linear-gradient(135deg, rgba(0, 82, 204, 0.12) 0%, rgba(0, 82, 204, 0.08) 100%);
+    border: 2px solid rgba(0, 82, 204, 0.5);
+    color: #0052cc;
+}
+
+body.light-theme .btn:hover {
+    background: linear-gradient(135deg, rgba(0, 82, 204, 0.2) 0%, rgba(0, 82, 204, 0.15) 100%);
+    border-color: rgba(0, 82, 204, 0.8);
+}
+
+body.light-theme .control-group {
+    background: rgba(0, 82, 204, 0.06);
+    border: 1px solid rgba(0, 82, 204, 0.25);
+}
+
+body.light-theme .slider {
+    background: linear-gradient(to right, rgba(0, 82, 204, 0.15), rgba(0, 82, 204, 0.25));
+}
+
+body.light-theme .slider:hover {
+    background: linear-gradient(to right, rgba(0, 82, 204, 0.25), rgba(0, 82, 204, 0.35));
+}
+
+body.light-theme .slider::-webkit-slider-thumb {
+    background: linear-gradient(135deg, #0052cc, #003d99);
+    box-shadow: 0 0 10px rgba(0, 82, 204, 0.6);
+}
+
+body.light-theme .slider::-moz-range-thumb {
+    background: linear-gradient(135deg, #0052cc, #003d99);
+    box-shadow: 0 0 10px rgba(0, 82, 204, 0.6);
+}
+
+body.light-theme .speed-display,
+body.light-theme .volume-display {
+    color: #0052cc;
+}
+
+body.light-theme .header {
+    background: linear-gradient(180deg, rgba(248, 249, 250, 0.98) 0%, rgba(232, 236, 241, 0.95) 100%);
+    border-bottom: 2px solid rgba(0, 82, 204, 0.25);
+}
+
+body.light-theme .footer {
+    background: linear-gradient(180deg, rgba(232, 236, 241, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
+    border-top: 2px solid rgba(0, 82, 204, 0.25);
+}
+
+body.light-theme .story-dropdown {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 82, 204, 0.4);
+    color: #1a1a1a;
+}
+
+body.light-theme .story-dropdown:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 82, 204, 0.6);
+}
+
+body.light-theme .story-dropdown:focus {
+    background: rgba(255, 255, 255, 1);
+    border-color: #0052cc;
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15);
+}
+
+body.light-theme .story-dropdown option {
+    background: #ffffff;
+    color: #1a1a1a;
 }
 
 /* ============================================
@@ -353,11 +425,13 @@ body.light-theme::before {
 .footer {
     flex-shrink: 0;
     height: auto;
+    min-height: clamp(60px, 10vh, 90px);
     background: linear-gradient(180deg, rgba(var(--bg-secondary-rgb), 0.95) 0%, rgba(var(--bg-primary-rgb), 0.98) 100%);
     border-top: 2px solid var(--border);
     display: flex;
     align-items: center;
-    padding: clamp(16px, 3vh, 28px) clamp(20px, 5vw, 40px);
+    justify-content: center;
+    padding: clamp(10px, 2vh, 16px) clamp(10px, 3vw, 20px);
     backdrop-filter: blur(15px);
     z-index: 100;
     box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
@@ -367,22 +441,22 @@ body.light-theme::before {
 .footer-content {
     display: flex;
     align-items: center;
-    gap: clamp(10px, 2vw, 16px);
+    gap: clamp(8px, 1.5vw, 14px);
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    overflow-x: auto;
 }
 
 .control-group {
     display: flex;
     align-items: center;
-    gap: clamp(6px, 1.5vw, 10px);
-    padding: clamp(6px, 1vw, 10px);
+    gap: clamp(5px, 1vw, 8px);
+    padding: clamp(5px, 0.8vw, 8px);
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(0, 212, 255, 0.15);
-    border-radius: 12px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     flex-wrap: nowrap;
 }
@@ -391,12 +465,12 @@ body.light-theme::before {
    BUTTONS
    ============================================ */
 .btn {
-    padding: clamp(10px, 1.8vw, 12px) clamp(12px, 2.5vw, 16px);
+    padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 14px);
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%);
     border: 2px solid rgba(0, 212, 255, 0.4);
     border-radius: 10px;
     color: var(--accent);
-    font-size: clamp(12px, 1.8vw, 14px);
+    font-size: clamp(11px, 1.6vw, 13px);
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: inherit;
@@ -426,11 +500,11 @@ body.light-theme::before {
 }
 
 .btn-play {
-    min-width: clamp(50px, 9vw, 64px);
-    min-height: clamp(50px, 9vw, 64px);
+    min-width: clamp(48px, 8vw, 60px);
+    min-height: clamp(48px, 8vw, 60px);
     padding: 0;
-    font-size: clamp(20px, 3.5vw, 26px);
-    border-radius: 14px;
+    font-size: clamp(18px, 3vw, 24px);
+    border-radius: 12px;
 }
 
 .btn-small {
@@ -466,7 +540,7 @@ body.light-theme::before {
    SLIDERS
    ============================================ */
 .slider {
-    width: clamp(90px, 18vw, 140px);
+    width: clamp(80px, 16vw, 130px);
     height: 6px;
     border-radius: 3px;
     background: linear-gradient(to right, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.2));
@@ -484,55 +558,55 @@ body.light-theme::before {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     cursor: pointer;
-    box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
     transition: all 0.3s ease;
     border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .slider::-webkit-slider-thumb:hover {
     transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.8);
 }
 
 .slider::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     cursor: pointer;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
     transition: all 0.3s ease;
 }
 
 .slider::-moz-range-thumb:hover {
     transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.8);
 }
 
 .slider-volume {
-    width: clamp(70px, 14vw, 110px);
+    width: clamp(60px, 12vw, 100px);
 }
 
 .speed-display {
-    font-size: clamp(12px, 2vw, 14px);
+    font-size: clamp(10px, 1.6vw, 12px);
     color: var(--accent);
     font-weight: 700;
-    min-width: 45px;
+    min-width: 35px;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .volume-display {
-    font-size: clamp(11px, 1.8vw, 13px);
+    font-size: clamp(9px, 1.4vw, 11px);
     color: var(--accent);
     font-weight: 600;
-    min-width: 40px;
+    min-width: 32px;
     text-align: center;
 }
 
@@ -592,55 +666,52 @@ body.light-theme::before {
 
     .footer {
         height: auto;
-        padding: clamp(12px, 2vh, 18px) clamp(12px, 3vw, 20px);
+        min-height: clamp(60px, 9vh, 80px);
+        padding: clamp(10px, 1.5vh, 14px) clamp(10px, 2vw, 16px);
     }
 
     .footer-content {
-        gap: clamp(8px, 1.5vw, 12px);
-        flex-wrap: wrap;
+        gap: clamp(6px, 1.2vw, 10px);
+        flex-wrap: nowrap;
         justify-content: center;
+        overflow-x: auto;
     }
 
     .control-group {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
         justify-content: center;
-        gap: clamp(5px, 1vw, 8px);
-        padding: clamp(5px, 0.8vw, 8px);
+        gap: clamp(4px, 0.8vw, 6px);
+        padding: clamp(4px, 0.6vw, 6px);
     }
 
     .btn-play {
-        min-width: clamp(48px, 8vw, 60px);
-        min-height: clamp(48px, 8vw, 60px);
-        font-size: clamp(18px, 3vw, 22px);
+        min-width: clamp(44px, 7vw, 54px);
+        min-height: clamp(44px, 7vw, 54px);
+        font-size: clamp(16px, 2.8vw, 20px);
     }
 
     .btn-small {
-        padding: clamp(7px, 1.2vw, 9px) clamp(9px, 1.8vw, 11px);
-        font-size: clamp(10px, 1.5vw, 12px);
+        padding: clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 10px);
+        font-size: clamp(10px, 1.4vw, 12px);
     }
 
     .btn-music,
     .btn-mute {
-        font-size: clamp(15px, 2.5vw, 18px);
-        padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 12px);
-    }
-
-    .btn-theme {
-        font-size: clamp(12px, 1.8vw, 16px);
+        font-size: clamp(14px, 2.2vw, 18px);
         padding: clamp(7px, 1.2vw, 9px) clamp(9px, 1.5vw, 11px);
     }
 
     .slider {
-        width: clamp(70px, 14vw, 110px);
+        width: clamp(70px, 13vw, 110px);
     }
 
     .slider-volume {
-        width: clamp(50px, 11vw, 80px);
+        width: clamp(50px, 10vw, 80px);
     }
 
     .speed-display {
-        font-size: clamp(10px, 1.8vw, 12px);
-        min-width: 35px;
+        font-size: clamp(9px, 1.4vw, 11px);
+        min-width: 32px;
     }
 
     .line {
@@ -697,17 +768,19 @@ body.light-theme::before {
 
     .footer {
         height: auto;
+        min-height: clamp(60px, 9vh, 80px);
         padding: clamp(10px, 1.5vh, 14px) clamp(8px, 2vw, 12px);
     }
 
     .footer-content {
         gap: clamp(6px, 1vw, 10px);
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
+        overflow-x: auto;
     }
 
     .control-group {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
         gap: clamp(4px, 0.8vw, 6px);
         min-width: auto;
         padding: clamp(5px, 0.8vw, 8px);
@@ -722,17 +795,13 @@ body.light-theme::before {
     .btn-small {
         padding: clamp(6px, 0.8vw, 8px) clamp(8px, 1.2vw, 10px);
         font-size: clamp(10px, 1.4vw, 12px);
+        display: none;
     }
 
     .btn-music,
     .btn-mute {
         font-size: clamp(13px, 2vw, 16px);
         padding: clamp(7px, 1.2vw, 9px) clamp(9px, 1.5vw, 11px);
-    }
-
-    .btn-theme {
-        font-size: clamp(11px, 1.6vw, 14px);
-        padding: clamp(6px, 1vw, 8px) clamp(8px, 1.2vw, 10px);
     }
 
     .slider {
